@@ -1,0 +1,63 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Overleaf archive
+        run: |
+          zip -r "CustThesis-${GITHUB_REF_NAME}.zip" \
+            main.tex \
+            custhesis.cls \
+            README.md \
+            LICENSE \
+            Makefile \
+            latexmkrc \
+            chapters \
+            appendices \
+            figures \
+            fonts \
+            assets \
+            .gitignore \
+            -x "*.DS_Store"
+
+      - name: Write release notes
+        run: |
+          cat > RELEASE_NOTES.md <<'EOF'
+          # CustThesis v1.0.0
+
+          First public release of CustThesis, an unofficial LaTeX template for Changchun University of Science and Technology undergraduate thesis writing.
+
+          ## Highlights
+
+          - Provides a CUST undergraduate thesis LaTeX class and example document.
+          - Supports cover page, originality statement, abstracts, table of contents, chapters, references, appendices, and acknowledgements.
+          - Uses XeLaTeX and supports local TeX Live, latexmk, Tectonic, and Overleaf.
+          - Includes README preview images and an Overleaf-ready release archive.
+
+          ## Notice
+
+          The LaTeX template source code and documentation are released under the MIT License. Fonts, the university logo, and other third-party assets are not covered by the MIT License.
+          EOF
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            "CustThesis-${GITHUB_REF_NAME}.zip" \
+            --repo "${GITHUB_REPOSITORY}" \
+            --title "CustThesis ${GITHUB_REF_NAME}" \
+            --notes-file RELEASE_NOTES.md
