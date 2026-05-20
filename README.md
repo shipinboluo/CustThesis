@@ -5,19 +5,8 @@
 本项目为非官方开源模板，使用前请以学校、学院当年发布的最新格式要求为准。
 模板中的示例段落、题目和参考文献条目均为通用示例内容，便于演示、开源发布和二次修改。
 
-## 模板预览
+若发现问题，请提交Issue，欢迎Pull Request。
 
-| 封面 | 原创承诺书 |
-| --- | --- |
-| <img src="assets/preview/page-01-cover.png" width="360" alt="Cover page preview"> | <img src="assets/preview/page-02-commitment.png" width="360" alt="Commitment page preview"> |
-
-| 中文摘要 | 英文摘要 |
-| --- | --- |
-| <img src="assets/preview/page-03-abstract.png" width="360" alt="Chinese abstract preview"> | <img src="assets/preview/page-04-english-abstract.png" width="360" alt="English abstract preview"> |
-
-| 目录 | 正文示例 |
-| --- | --- |
-| <img src="assets/preview/page-05-toc.png" width="360" alt="Table of contents preview"> | <img src="assets/preview/page-06-chapter-1.png" width="360" alt="Chapter page preview"> |
 
 ## 特性
 
@@ -62,6 +51,20 @@ make
 ```bash
 tectonic -X compile -r 1 main.tex
 ```
+
+## 模板预览
+
+| 封面 | 原创承诺书 |
+| --- | --- |
+| [<img src="assets/preview/page-01-cover.png" width="120" alt="Cover page preview">](assets/preview/page-01-cover.png) | [<img src="assets/preview/page-02-commitment.png" width="120" alt="Commitment page preview">](assets/preview/page-02-commitment.png) |
+
+| 中文摘要 | 英文摘要 |
+| --- | --- |
+| [<img src="assets/preview/page-03-abstract.png" width="120" alt="Chinese abstract preview">](assets/preview/page-03-abstract.png) | [<img src="assets/preview/page-04-english-abstract.png" width="120" alt="English abstract preview">](assets/preview/page-04-english-abstract.png) |
+
+| 目录 | 正文示例 |
+| --- | --- |
+| [<img src="assets/preview/page-05-toc.png" width="120" alt="Table of contents preview">](assets/preview/page-05-toc.png) | [<img src="assets/preview/page-06-chapter-1.png" width="120" alt="Chapter page preview">](assets/preview/page-06-chapter-1.png) |
 
 
 ## 格式映射
