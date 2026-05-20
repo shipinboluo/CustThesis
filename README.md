@@ -54,17 +54,20 @@ tectonic -X compile -r 1 main.tex
 
 ## 模板预览
 
-| 封面 | 原创承诺书 |
-| --- | --- |
-| [<img src="assets/preview/page-01-cover.png" width="120" alt="Cover page preview">](assets/preview/page-01-cover.png) | [<img src="assets/preview/page-02-commitment.png" width="120" alt="Commitment page preview">](assets/preview/page-02-commitment.png) |
+<p>
+  <a href="assets/preview/page-01-cover.png"><img src="assets/preview/page-01-cover.png" width="120" alt="Preview page 1"></a>
+  <a href="assets/preview/page-02-commitment.png"><img src="assets/preview/page-02-commitment.png" width="120" alt="Preview page 2"></a>
+  <a href="assets/preview/page-03-abstract.png"><img src="assets/preview/page-03-abstract.png" width="120" alt="Preview page 3"></a>
+  <a href="assets/preview/page-04-english-abstract.png"><img src="assets/preview/page-04-english-abstract.png" width="120" alt="Preview page 4"></a>
+  <a href="assets/preview/page-05-toc.png"><img src="assets/preview/page-05-toc.png" width="120" alt="Preview page 5"></a>
+</p>
 
-| 中文摘要 | 英文摘要 |
-| --- | --- |
-| [<img src="assets/preview/page-03-abstract.png" width="120" alt="Chinese abstract preview">](assets/preview/page-03-abstract.png) | [<img src="assets/preview/page-04-english-abstract.png" width="120" alt="English abstract preview">](assets/preview/page-04-english-abstract.png) |
-
-| 目录 | 正文示例 |
-| --- | --- |
-| [<img src="assets/preview/page-05-toc.png" width="120" alt="Table of contents preview">](assets/preview/page-05-toc.png) | [<img src="assets/preview/page-06-chapter-1.png" width="120" alt="Chapter page preview">](assets/preview/page-06-chapter-1.png) |
+<p>
+  <a href="assets/preview/page-06-chapter-1.png"><img src="assets/preview/page-06-chapter-1.png" width="120" alt="Preview page 6"></a>
+  <a href="assets/preview/page-07-chapter-2.png"><img src="assets/preview/page-07-chapter-2.png" width="120" alt="Preview page 7"></a>
+  <a href="assets/preview/page-08-chapter-2-continued.png"><img src="assets/preview/page-08-chapter-2-continued.png" width="120" alt="Preview page 8"></a>
+  <a href="assets/preview/page-09-conclusion.png"><img src="assets/preview/page-09-conclusion.png" width="120" alt="Preview page 9"></a>
+</p>
 
 
 ## 格式映射
