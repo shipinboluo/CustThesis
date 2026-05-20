@@ -1,21 +1,34 @@
 # CustThesis
 
-长春理工大学本科生毕业设计 LaTeX 模板。模板主要面向计算机科学与技术学院本科毕业设计/论文写作，按学院常用 Word 格式整理页面、字体、封面、原创承诺书、摘要、目录、标题、图表、公式、参考文献、附录和致谢样式。
+长春理工大学本科生毕业设计 LaTeX 模板。
 
 本项目为非官方开源模板，使用前请以学校、学院当年发布的最新格式要求为准。
+模板中的示例段落、题目和参考文献条目均为通用示例内容，便于演示、开源发布和二次修改。
+
+## 模板预览
+
+| 封面 | 原创承诺书 |
+| --- | --- |
+| <img src="assets/preview/page-01-cover.png" width="360" alt="Cover page preview"> | <img src="assets/preview/page-02-commitment.png" width="360" alt="Commitment page preview"> |
+
+| 中文摘要 | 英文摘要 |
+| --- | --- |
+| <img src="assets/preview/page-03-abstract.png" width="360" alt="Chinese abstract preview"> | <img src="assets/preview/page-04-english-abstract.png" width="360" alt="English abstract preview"> |
+
+| 目录 | 正文示例 |
+| --- | --- |
+| <img src="assets/preview/page-05-toc.png" width="360" alt="Table of contents preview"> | <img src="assets/preview/page-06-chapter-1.png" width="360" alt="Chapter page preview"> |
 
 ## 特性
 
-- 使用 `custhesis.cls` 集中管理论文格式，正文入口为 `main.tex`。
-- 支持封面、原创承诺书、中英文摘要、目录、正文、参考文献、附录和致谢。
-- 正文示例为计算机专业算法研究类内容，不包含个人信息或具体毕设课题。
+- 支持封面、原创承诺书、中英文摘要、目录、正文、标题、图表、公式、参考文献、附录和致谢。
 - 使用 XeLaTeX 编译，兼容本地 TeX Live、Tectonic 和 Overleaf。
 - 字体从 `fonts/sim/` 目录读取，便于在不同环境中复现格式。
 
 ## 文件结构
 
 - `custhesis.cls`：模板类文件，包含页面、字体、标题、页眉页脚、摘要、目录、图表、公式、参考文献、附录和致谢格式。
-- `main.tex`：论文模板入口，提交前请替换题目信息、摘要、正文和参考文献。
+- `main.tex`：论文模板入口，使用时替换题目信息、摘要、正文和参考文献。
 - `chapters/`：正文各章示例。
 - `appendices/`：附录示例。
 - `figures/`：图片资源，包含封面使用的学校标识图。
@@ -25,7 +38,7 @@
 
 ## 编译方式
 
-推荐使用 XeLaTeX：
+使用 XeLaTeX：
 
 ```bash
 xelatex main.tex
@@ -44,25 +57,12 @@ latexmk -xelatex main.tex
 make
 ```
 
-如果本地没有完整 TeX Live，可以安装 Tectonic 后编译：
+使用 Tectonic 编译：
 
 ```bash
 tectonic -X compile -r 1 main.tex
 ```
 
-## Overleaf 预览
-
-上传项目 zip 后，打开 Overleaf 设置：
-
-1. 新版 Overleaf：点击左下角齿轮图标；旧版 Overleaf：点击左上角 `Menu`。
-2. 将 `Main document` 设为 `main.tex`。
-3. 将 `Compiler` 设为 `XeLaTeX`。
-4. 点击 `Recompile`，右侧即为 PDF 预览。
-5. 如果仍然报错，点击 `Logs and output files`，复制第一条以 `!` 开头的错误及其前后 20 行。
-
-常见错误是 Overleaf 默认使用 `pdfLaTeX`。本模板使用中文字体和 `ctex`，必须使用 `XeLaTeX` 编译。项目中已加入 `% !TeX program = xelatex` 和 `latexmkrc`，但仍建议在 Overleaf 设置中手动确认一次编译器。
-
-模板依赖常见宏包：`ctex`、`fontspec`、`xeCJK`、`geometry`、`fancyhdr`、`caption`、`amsmath`、`amssymb`、`booktabs`、`float`、`tocloft`、`hyperref`、`enumitem` 等。
 
 ## 格式映射
 
@@ -76,31 +76,7 @@ tectonic -X compile -r 1 main.tex
 - 表格：示例使用 `booktabs` 三线表。
 - 参考文献：提供手工编号环境 `custbibliography`，编号左对齐，条目按 Word 模板的普通段落式排版，条目格式按 GB/T 7714-2015 书写。
 
-## 使用方式
 
-在 `main.tex` 开头修改论文信息：
-
-```tex
-\custtitle{中文题名}
-\custenglishtitle{English Title}
-\custstudent{姓名}
-\custmajor{专业}
-\custstudentid{学号}
-\custsupervisor{指导教师}
-\custschool{学院}
-\custdate{二〇二六年五月}
-```
-
-如果毕业类型为“本科生毕业论文”，同时修改：
-
-```tex
-\custdoctype{本科生毕业论文}
-\custheadertitle{长春理工大学本科生毕业论文}
-```
-
-正文从 `\custmainmatter` 后开始。参考文献、附录和致谢使用模板提供的环境，不会强制另起新页，符合参考规范中“参考文献、附录、致谢不另起新页”的要求。
-
-模板中的示例段落、题目、作者信息和参考文献条目均为通用示例内容，便于开源发布和二次定制。
 
 ## 字体说明
 
@@ -110,7 +86,7 @@ tectonic -X compile -r 1 main.tex
 
 ## BibTeX
 
-如果本模板对你的论文写作有帮助，可以使用以下 BibTeX 条目引用：
+If this template is useful for your thesis writing, you can cite it with the following BibTeX entry:
 
 ```bibtex
 @misc{custthesis,
@@ -118,12 +94,12 @@ tectonic -X compile -r 1 main.tex
   title        = {CustThesis: Changchun University of Science and Technology Undergraduate Thesis LaTeX Template},
   year         = {2026},
   howpublished = {\url{https://github.com/shipinboluo/CustThesis}},
-  note         = {Unofficial LaTeX template for CUST undergraduate thesis writing}
+  note         = {LaTeX template for CUST undergraduate thesis writing}
 }
 ```
 
 ## License
 
-本项目中的 LaTeX 模板源码和文档采用 MIT License 开源，详见 `LICENSE`。
+The LaTeX template source code and documentation are released under the MIT License. See [LICENSE](LICENSE).
 
-字体文件、学校标识图以及其他第三方资源不属于 MIT License 授权范围，其使用和再分发应遵循对应权利人的授权条款。
+Fonts, the university logo, and other third-party assets are not covered by the MIT License. Their use and redistribution should follow the license terms of the respective rights holders.
