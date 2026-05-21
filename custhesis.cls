@@ -300,9 +300,9 @@
   \pagestyle{empty}
   \thispagestyle{empty}
   \begingroup
-    \custfangsong\zihao{4}\setstretch{2}
+    \custfangsong\zihao{-3}\setstretch{2}
     \begin{center}
-      {\zihao{3}\bfseries 毕业设计（论文）原创承诺书\par}
+      {\songti\zihao{3}\bfseries 毕业设计（论文）原创承诺书\par}
     \end{center}
     \vspace{1.2cm}
     \setlength{\parindent}{0pt}
@@ -317,7 +317,7 @@
 
     \vspace{1.2cm}
     \begin{flushright}
-      作 者 签 名：\hspace{3.2cm}年\hspace{1.0cm}月\hspace{1.0cm}日\hspace{1.5cm}
+      \makebox[3.0cm][s]{作\hfil 者\hfil 签\hfil 名}：\hspace{3.2cm}年\hspace{1.0cm}月\hspace{1.0cm}日\hspace{1.5cm}
     \end{flushright}
   \endgroup
   \clearpage
