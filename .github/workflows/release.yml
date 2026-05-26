@@ -20,6 +20,7 @@ jobs:
         run: |
           zip -r "CustThesis-${GITHUB_REF_NAME}.zip" \
             main.tex \
+            references.bib \
             custhesis.cls \
             README.md \
             LICENSE \

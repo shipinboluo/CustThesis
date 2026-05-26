@@ -18,6 +18,7 @@
 
 - `custhesis.cls`：模板类文件，包含页面、字体、标题、页眉页脚、摘要、目录、图表、公式、参考文献、附录和致谢格式。
 - `main.tex`：论文模板入口，使用时替换题目信息、摘要、正文和参考文献。
+- `references.bib`：BibTeX 参考文献数据库，正文中使用 `\custcite{文献键}` 引用。
 - `chapters/`：正文各章示例。
 - `appendices/`：附录示例。
 - `figures/`：图片资源，包含封面使用的学校标识图。
@@ -30,6 +31,8 @@
 使用 XeLaTeX：
 
 ```bash
+xelatex main.tex
+bibtex main
 xelatex main.tex
 xelatex main.tex
 ```
@@ -80,7 +83,7 @@ tectonic -X compile -r 1 main.tex
 - 图表：图题置于图下，表题置于表上，均为宋体五号；编号按章编排。
 - 公式：按章编号，格式为“（1-1）”。
 - 表格：示例使用 `booktabs` 三线表。
-- 参考文献：提供手工编号环境 `custbibliography`，编号左对齐，条目按 Word 模板的普通段落式排版，条目格式按 GB/T 7714-2015 书写。
+- 参考文献：使用 BibTeX 和 `gbt7714-numerical` 样式生成，正文中使用 `\custcite{文献键}` 引用，编号和 PDF 跳转由 LaTeX 自动维护。
 
 
 

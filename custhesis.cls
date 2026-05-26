@@ -22,6 +22,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{enumitem}
 \RequirePackage{tocloft}
+\RequirePackage[numbers,sort&compress,square]{natbib}
 \RequirePackage[hidelinks]{hyperref}
 
 \makeatletter
@@ -254,7 +255,7 @@
 
 \def\tagform@#1{\maketag@@@{（#1）}}
 
-\newcommand{\custcite}[1]{\textsuperscript{[#1]}}
+\newcommand{\custcite}[1]{\textsuperscript{\cite{#1}}}
 \newcommand{\custeqref}[1]{式（\ref{#1}）}
 
 \newcommand{\cust@coverlabel}[1]{\makebox[2.65cm][s]{#1}}
@@ -379,7 +380,7 @@
 }
 
 \newcommand{\custbackmattertitle}[1]{%
-  \par\addvspace{1.0\baselineskip}
+  \clearpage
   \phantomsection
   \addcontentsline{toc}{chapter}{#1}
   \begin{center}
@@ -388,28 +389,30 @@
   \vspace{0.5\baselineskip}
 }
 
-\newcounter{custbibitem}
-\newenvironment{custbibliography}{%
-  \custbackmattertitle{参考文献}
-  \songti\zihao{-4}
-  \setcounter{custbibitem}{0}
-  \setlength{\parindent}{0pt}
-  \setlength{\parskip}{0pt}
-  \renewcommand{\item}{%
-    \par\refstepcounter{custbibitem}%
-    \noindent[\arabic{custbibitem}]\hspace{0.25em}\ignorespaces
-  }
-}{%
-  \par
+\renewcommand{\bibname}{参考文献}
+\renewcommand{\refname}{参考文献}
+\renewcommand{\bibsection}{%
+  \custbackmattertitle{参考文献}%
+}
+\renewcommand{\bibfont}{\songti\zihao{-4}}
+\setlength{\bibsep}{0pt}
+\newcommand{\cust@bibstyle}{gbt7714-numerical}
+\newcommand{\custbibstyle}[1]{\gdef\cust@bibstyle{#1}}
+\newcommand{\custbibliography}[1]{%
+  \bibliographystyle{\cust@bibstyle}%
+  \bibliography{#1}%
+  \clearpage
 }
 
 \newcounter{custappendix}
 \newcommand{\custappendixstart}{%
+  \clearpage
   \appendix
   \setcounter{chapter}{0}
   \setcounter{custappendix}{0}
 }
 \newcommand{\custappendixchapter}[1]{%
+  \clearpage
   \refstepcounter{chapter}
   \stepcounter{custappendix}
   \setcounter{section}{0}
@@ -418,6 +421,7 @@
 }
 
 \newenvironment{custacknowledgements}{%
+  \clearpage
   \custbackmattertitle{致谢}
   \setlength{\parindent}{2em}
 }{%

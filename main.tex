@@ -42,12 +42,8 @@ The sample text is intended only for formatting and structural reference. Users 
 \input{chapters/chapter2}
 \input{chapters/conclusion}
 
-\begin{custbibliography}
-  \item 作者. 智能优化算法原理与应用[M]. 出版地: 出版社, 出版年: 起止页码.
-  \item 作者. 改进粒子群优化算法研究[J]. 期刊名, 出版年份, 卷号(期号): 起止页码.
-  \item Author A, Author B, Author C, et al. An improved heuristic optimization algorithm[J]. Journal Name, Year, Volume(Issue): pages.
-  \item GB/T 7714-2015, 信息与文献 参考文献著录规则[S]. 北京: 中国标准出版社, 2015.
-\end{custbibliography}
+\nocite{gbt7714-2015}
+\custbibliography{references}
 
 \custappendixstart
 \input{appendices/appendix-a}

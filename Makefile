@@ -14,6 +14,8 @@ all:
 
 xelatex:
 	xelatex -interaction=nonstopmode $(MAIN).tex
+	bibtex $(MAIN)
+	xelatex -interaction=nonstopmode $(MAIN).tex
 	xelatex -interaction=nonstopmode $(MAIN).tex
 
 tectonic:
