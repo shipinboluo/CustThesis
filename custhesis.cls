@@ -353,7 +353,7 @@
 
 \newcommand{\custkeywords}[1]{%
   \par\vspace{\baselineskip}
-  \noindent{\heiti\bfseries 关键词：#1}\par
+  \noindent{\heiti 关键词：#1}\par
 }
 
 \newenvironment{custenabstract}{%
@@ -370,7 +370,7 @@
 
 \newcommand{\custkeywordsen}[1]{%
   \par\vspace{\baselineskip}
-  \noindent\textbf{Key words: #1}\par
+  \noindent Key words: #1\par
 }
 
 \newcommand{\custtableofcontents}{%
